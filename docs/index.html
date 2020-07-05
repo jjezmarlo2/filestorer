@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Textbox</title>
+        <meta charset="utf-8">
+		<style>
+			body {
+				background-repeat: no-repeat;
+			}
+			img {
+				z-index: -1;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#text-getter {
+				position: relative;
+				top: 400px;
+			}
+			p {
+				background-color: white;
+			}
+		</style>
+    </head>
+    <body>
+		<h1 id="title">Choose a picture and it will be shown:</h1>
+		<form id="picture-getter">
+			<input type="text" id="picture" name="picture" placeholder="Picture Link">
+			<input type="submit" id="submit" value = "Submit Pic">
+		</form>
+		<form id="text-getter">
+			<input type="text" id="text" name="text">
+			<input type="submit" id="submit" value = "^">
+		</form>
+		<div id="text-shower"></div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		var w = window.innerWidth;
+		$("#picture-getter").on("submit", function(event) {
+			event.preventDefault();
+			var pictureChosen = $("#picture").val()
+			var image = $("<img>")
+				.attr("src", pictureChosen)
+				.attr("alt", "Baby Cougar")
+				.attr("width", w)
+				.appendTo("body")
+		})
+		$("#text-getter").on("submit", function(event) {
+			event.preventDefault();
+			var textToPut = $("#text").val()
+			var textLength = textToPut.length;
+			var lengthh = textLength * 10 + "px"
+			var newP = $("<p>")
+				.css("width", lengthh)
+				.text(textToPut)
+				.appendTo("#text-shower")
+		})
+	</script>
+</html>
