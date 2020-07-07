@@ -17,14 +17,19 @@
 		var textDiv = document.getElementById("Texts")
 		textDiv.textContent = window.localStorage.getItem("texts")
         	var textIt = function() {
-			var textToPut = document.getElementById("text")
+			 <! -- get the text to put --> 
+			var textToPut = document.getElementById("text").value;
 			var texts = window.localStorage.getItem("texts")
+			
 			var textArray = [texts]
+			 <! -- sets textArray with the textToPut --> 
 			textArray.push(textToPut)
 			
+			 <! -- resets the text localStorage --> 
 			window.localStorage.setItem("texts", textArray)
 			var texts = window.localStorage.getItem("texts")
 			
+			 <! -- puts the texts --> 
 			var textDiv = document.getElementById("Texts")
 			textDiv.textContent = texts;
        		};
