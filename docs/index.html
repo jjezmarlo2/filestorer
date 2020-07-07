@@ -9,11 +9,19 @@
     </head>
     <body>
 	    <div id="division"></div>
+	    <input type="text" id="dogName" name="dogName" placeholder="dog name">
+	    <button id="enterDog">Enter your Dog!</button>
     </body>
+	
 	<script>
-		window.localStorage.setItem('myDog', 'Comet')
-		var dog = window.localStorage.getItem('myDog')
-		var divIsion = document.getElementById("division")
-		divIsion.textContent = window.localStorage.getItem('myDog')
+		var dogButton = document.getElementById('enterDog');
+        	var dogIt = function() {
+			var dogToPut = document.getElementById("dogName").value;
+			window.localStorage.setItem('myDog', dogToPut);
+			var dog = window.localStorage.getItem('myDog');
+			var divIsion = document.getElementById("division");
+		        divIsion.textContent = dog;
+        };
+        dogButton.addEventListener('click', dogIt);
 	</script>
 </html>
