@@ -31,6 +31,7 @@
 			allArray.push(dog)
 		        all.textContent += dogAndNewLine;
 			window.localStorage.setItem('allDogs', allArray)
+			currDiv.textContent = dog;
         };
         dogButton.addEventListener('click', dogIt);
 	</script>
