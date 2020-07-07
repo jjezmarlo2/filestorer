@@ -13,11 +13,19 @@
 	    <div id="Texts"></div>
     </body>
 	
-	<script>
-		window.localStorage.clear();
-		
+	<script>		
+		textDiv.textContent = window.localStorage.getItem("texts")
         	var textIt = function() {
+			var textToPut = document.getElementById("text")
+			var texts = window.localStorage.getItem("texts")
+			var textArray = [texts]
+			textArray.push(textToPut)
 			
+			window.localStorage.setItem("texts", textArray)
+			var texts = window.localStorage.getItem("texts")
+			
+			var textDiv = document.getElementById("Texts")
+			textDiv.textContent = texts;
        		};
 	var textButton = document.getElementById("enterText")
         textButton.addEventListener('click', textIt);
