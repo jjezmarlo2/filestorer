@@ -15,8 +15,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>		
 		var textDiv = document.getElementById("Texts")
-		console.log(window.localStorage.getItem("texts"))
-		textDiv.textContent = window.localStorage.getItem("texts")
+		textDiv.textContent = JSON.parse(localStorage.getItem("texts"))
         	var textIt = function() {
 			// get the text to put
 			var textToPut = document.getElementById("textPutter").value;
