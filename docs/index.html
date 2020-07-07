@@ -8,25 +8,18 @@
 		</style>
     </head>
     <body>
-	    <input type="text" id="dogName" name="dogName" placeholder="dog name">
-	    <button id="enterDog">Enter your Dog!</button>
-	    <div id="currentPuppy"></div>
+	    <input type="text" id="textPutter" name="textPutter" placeholder="your text">
+	    <button id="enterText">^</button>
+	    <div id="Texts"></div>
     </body>
 	
 	<script>
-		window.localStorage.removeItem('allDogs')
-		var currPup = window.localStorage.getItem('myDog')
-		var currPuppyd = document.getElementById("currentPuppy")
-		currPuppyd.textContent = currPup
+		window.localStorage.clear();
 		
-        	var dogIt = function() {
-			var dogToPut = document.getElementById("dogName").value;
-			var currPuppyd = document.getElementById("currentPuppy")
-			currPuppyd.textContent = dogToPut;
+        	var textIt = function() {
 			
-			window.localStorage.setItem('myDog', dogToPut)
        		};
-	var doggyButton = document.getElementById("enterDog")
-        doggyButton.addEventListener('click', dogIt);
+	var textButton = document.getElementById("enterText")
+        textButton.addEventListener('click', textIt);
 	</script>
 </html>
