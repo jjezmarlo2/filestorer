@@ -32,7 +32,6 @@
 			currDiv.textContent = dog;
 			
 			var allDiv = document.getElementById("allPuppies");
-			var allArray = window.localStorage.getItem('allDogs')
 			allArray.push(dog)
 		        allDiv.textContent += dogAndNewLine;
 			window.localStorage.setItem('allDogs', allArray)
