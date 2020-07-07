@@ -14,6 +14,7 @@
     </body>
 	
 	<script>
+		window.localStorage.removeItem('allDogs')
 		var currPup = window.localStorage.getItem('myDog')
 		var currPuppyd = document.getElementById("currentPuppy")
 		currPuppyd.textContent = currPup
