@@ -19,19 +19,21 @@
         	var textIt = function() {
 			// get the text to put
 			var textToPut = document.getElementById("textPutter").value;
-			console.log("what to put" + textToPut);
+			console.log("what to put: " + textToPut);
 			var texts = window.localStorage.getItem("texts")
-			console.log("current in the storage" + texts);
+			console.log("current in the storage without what to put: " + JSON.parse(texts));
 			
 			var textArray = [texts]
+			console.log("Text Array: " + textArray + "should be same as storage")
 			 // sets textArray with the textToPut
 			textArray.push(textToPut)
+			console.log("Now text array: " + textArray)
 			
 			 //resets the text localStorage
 			
 			window.localStorage.setItem("texts", JSON.stringify(textArray))
 			var texts = JSON.parse(window.localStorage.getItem("texts"))
-			
+			console.log("Reseted item: " + texts)
 			 //puts the text
 			var newP = $("<p>")
 			.text(textToPut)
