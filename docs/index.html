@@ -14,6 +14,8 @@
     </body>
 	
 	<script>
+		var divi = document.getElementById("division")
+		divi.textContent = window.localStorage.getItem('myDog')
 		var dogButton = document.getElementById('enterDog');
         	var dogIt = function() {
 			var dogToPut = document.getElementById("dogName").value;
