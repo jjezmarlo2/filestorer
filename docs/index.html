@@ -14,6 +14,8 @@
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>		
+		window.localStorage.removeItem("texts")
+		window.localStorage.setItem("texts", "Welcome to the chat!")
 		var textDiv = document.getElementById("Texts")
 		console.log(JSON.parse(window.localStorage.getItem("texts")))
 		textDiv.textContent = JSON.parse(window.localStorage.getItem("texts"))
