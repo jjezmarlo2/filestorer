@@ -27,11 +27,14 @@
 			window.localStorage.setItem('myDog', dogToPut);
 			var dog = window.localStorage.getItem('myDog');
 			var dogAndNewLine = "\n" + dog;
-			var all = document.getElementById("allPuppies");
-			allArray.push(dog)
-		        all.textContent += dogAndNewLine;
-			window.localStorage.setItem('allDogs', allArray)
+			var currDiv = document.getElementById("currentPuppy");
 			currDiv.textContent = dog;
+			
+			var allDiv = document.getElementById("allPuppies");
+			var allArray = window.localStorage.getItem('allDogs')
+			allArray.push(dog)
+		        allDiv.textContent += dogAndNewLine;
+			window.localStorage.setItem('allDogs', allArray)
         };
         dogButton.addEventListener('click', dogIt);
 	</script>
