@@ -23,6 +23,8 @@
 			var dogToPut = document.getElementById("dogName").value;
 			var currPuppyd = document.getElementById("currentPuppy")
 			currPuppyd.textContent = dogToPut;
+			
+			window.localStorage.setItem('myDog', dogToPut)
        		};
 	var doggyButton = document.getElementById("enterDog")
         doggyButton.addEventListener('click', dogIt);
