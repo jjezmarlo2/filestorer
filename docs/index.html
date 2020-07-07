@@ -48,14 +48,10 @@
 			window.localStorage.setItem("texts", JSON.stringify(textArray))
 			var texts = JSON.parse(window.localStorage.getItem("texts"))
 			
-			 //puts the texts
-			var textDiv = document.getElementById("Texts")
-			textDiv.textContent = texts[0];
-			for (var i=1; i<texts.length; i++) {
-				var newPar = $("<p>")
-				.text(texts[i])
-				.appendTo("body")
-			}
+			 //puts the text
+			var newP = $("<p>")
+			.text(textToPut)
+			.appendTo("body")
        		};
 	var textButton = document.getElementById("enterText")
         textButton.addEventListener('click', textIt);
