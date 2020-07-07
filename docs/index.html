@@ -8,21 +8,29 @@
 		</style>
     </head>
     <body>
-	    <div id="division"></div>
+	    <div id="allPuppies"></div>
 	    <input type="text" id="dogName" name="dogName" placeholder="dog name">
 	    <button id="enterDog">Enter your Dog!</button>
+	    <div id="currentPuppy"></div>
     </body>
 	
 	<script>
-		var divi = document.getElementById("division")
-		divi.textContent = window.localStorage.getItem('myDog')
+		var allDiv = document.getElementById("allPuppies")
+		var allArray = []
+		window.localStorage.setItem('allDogs', allArray)
+		var currDiv = document.getElementById("currentPuppy")
+		currDiv.textContent = window.localStorage.getItem('myDog')
+		allDiv.textContent = window.localStorage.getItem('allDogs')
 		var dogButton = document.getElementById('enterDog');
         	var dogIt = function() {
 			var dogToPut = document.getElementById("dogName").value;
 			window.localStorage.setItem('myDog', dogToPut);
 			var dog = window.localStorage.getItem('myDog');
-			var divIsion = document.getElementById("division");
-		        divIsion.textContent += dog;
+			var dogAndNewLine = "\n" + dog;
+			var all = document.getElementById("division");
+			allArray.push(dog)
+		        all.textContent += dogAndNewLine;
+			window.localStorage.setItem('allDogs', allArray)
         };
         dogButton.addEventListener('click', dogIt);
 	</script>
