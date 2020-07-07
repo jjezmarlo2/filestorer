@@ -22,7 +22,7 @@
 			window.localStorage.setItem('myDog', dogToPut);
 			var dog = window.localStorage.getItem('myDog');
 			var divIsion = document.getElementById("division");
-		        divIsion.textContent = dog;
+		        divIsion.textContent += dog;
         };
         dogButton.addEventListener('click', dogIt);
 	</script>
