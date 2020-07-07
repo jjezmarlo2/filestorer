@@ -8,8 +8,12 @@
 		</style>
     </head>
     <body>
-		<?php
-echo readfile("otherperson.txt");
-?>
-	</body>
+	    <div id="division"></div>
+    </body>
+	<script>
+		window.localStorage.setItem('myDog', 'Comet')
+		var dog = window.localStorage.getItem('myDog')
+		var divIsion = document.getElementById("#division")
+		divIsion.textContent = dog
+	</script>
 </html>
