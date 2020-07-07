@@ -19,7 +19,9 @@
         	var textIt = function() {
 			 <! -- get the text to put --> 
 			var textToPut = document.getElementById("text").value;
+			console.log("what to put" + textToPut);
 			var texts = window.localStorage.getItem("texts")
+			console.log("current in the storage" + texts);
 			
 			var textArray = [texts]
 			 <! -- sets textArray with the textToPut --> 
