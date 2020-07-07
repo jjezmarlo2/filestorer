@@ -16,7 +16,8 @@
 	
 	<script>
 		var allDiv = document.getElementById("allPuppies")
-		var allArray = []
+		var currPup = window.localStorage.getItem('myDog')
+		var allArray = [currPup]
 		window.localStorage.setItem('allDogs', allArray)
 		var currDiv = document.getElementById("currentPuppy")
 		currDiv.textContent = window.localStorage.getItem('myDog')
