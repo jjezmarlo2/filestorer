@@ -8,22 +8,22 @@
 		</style>
     </head>
     <body>
-	    <div id="allPuppies"></div>
 	    <input type="text" id="dogName" name="dogName" placeholder="dog name">
 	    <button id="enterDog">Enter your Dog!</button>
 	    <div id="currentPuppy"></div>
     </body>
 	
 	<script>
-		var allPuppiesd = document.getElementById("allPuppies")
-		var allArray = window.localStorage.getItem("allDogs")
-		var currPup = window.localStorage.getItem("myDog")
-		var currentPuppyd = document.getElementById("currentPuppy")
-		currentPuppyd.textContent = currPup
-
-		allPuppiesd.textContent = allArray
+		var currPup = window.localStorage.getItem('myDog')
+		var currPuppyd = document.getElementById("currentPuppy")
+		currPuppyd.textContent = currPup
+		
         	var dogIt = function() {
-        };
-        dogButton.addEventListener('click', dogIt);
+			var dogToPut = document.getElementById("dogName").value;
+			var currPuppyd = document.getElementById("currentPuppy")
+			currPuppyd.textContent = dogToPut;
+       		};
+	var doggyButton = document.getElementById("enterDog")
+        doggyButton.addEventListener('click', dogIt);
 	</script>
 </html>
