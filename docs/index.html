@@ -12,7 +12,7 @@
 	    <button id="enterText">^</button>
 	    <div id="Texts"></div>
     </body>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>		
 		var textDiv = document.getElementById("Texts")
 		textDiv.textContent = window.localStorage.getItem("texts")
@@ -33,7 +33,12 @@
 			
 			 //puts the texts
 			var textDiv = document.getElementById("Texts")
-			textDiv.textContent = texts;
+			textDiv.textContent = texts[0];
+			for (var i=1; i<texts.length; i++) {
+				var newPar = $("<p>")
+				.text(texts[i])
+				.appendTo("body")
+			}
        		};
 	var textButton = document.getElementById("enterText")
         textButton.addEventListener('click', textIt);
